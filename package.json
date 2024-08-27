@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "description": "test repository",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "node index.js"
   },
   "author": "artem",
   "license": "ISC",
-  "dependencies": { 
-    "chalk": "^5.3.0" 
+  "dependencies": {
+    "chalk": "^5.3.0"
   }
 }
