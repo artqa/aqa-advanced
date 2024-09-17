@@ -6,20 +6,16 @@ function divide(numerator, denominator) {
     return numerator / denominator;
 }
 
-try {
-    divide(2, 2);
-} catch (error) {
-    console.log('error message: ', error.message);
+function run(num1, num2) {
+    try {
+        divide(num1, num2);
+    } catch (error) {
+        console.error('error message: ', error.message); 
+    } finally {
+        console.log("The job is done");
+    }
 }
-try {
-    divide(3, 0);
-} catch (error) {
-    console.log('error message: ', error.message);
-}
-try {
-    divide(4, "a");
-} catch (error) {
-    console.log('error message: ', error.message);
-} finally {
-    console.log("The job is done");
-}
+
+run(2, 2);
+run(3, 0);
+run(4, "a");

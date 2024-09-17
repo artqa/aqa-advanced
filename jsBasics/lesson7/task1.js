@@ -6,13 +6,18 @@ function handleOdd() {
     console.log("number is odd");
 }
 
-function handleNum(num, callbackEven, callbackOdd) {
+function handleNumV1(num, callbackEven, callbackOdd) {
     if (num % 2 == 0) {
         return callbackEven();
     }
-    if (num % 2 !==0) {
+    else {
         return callbackOdd();
+     }
     }
+
+function handleNumV2(num, callbackEven, callbackOdd) {
+    (num % 2 == 0) ? callbackEven() : callbackOdd()
 }
 
-handleNum(1, handleEven, handleOdd);
+handleNumV2(1, handleEven, handleOdd);
+handleNumV1(2, handleEven, handleOdd);
