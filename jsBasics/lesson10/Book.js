@@ -10,7 +10,7 @@ export default class Book {
     }
 
     set name(value) {
-        if (value.length <= 3) {
+        if (typeof value !== 'string' && value.length < 0) {
             throw new Error (`Please, enter at least three characters.`)
         }
         this._name = value;
@@ -21,7 +21,7 @@ export default class Book {
     }
 
     set author(value) {
-        if (typeof value == 'number') {
+        if (typeof value !== 'string' && value.length < 0) {
             throw new Error (`Please, double check your entry!`)
         }
         this._author = value;

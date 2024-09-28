@@ -16,9 +16,9 @@ const eBookTwo = new EBook("Homo homini lupus", "Master of Wisdom", 1999, "PDF")
 eBookTwo.printInfo();
 
 // Using "get/set" to update the values
-eBookTwo._name = "In vino veritas"
-eBookTwo._author = "Singularis"
-eBookTwo._fileFomat = "DOC"
+eBookTwo.name = "In vino veritas"
+eBookTwo.author = "Singularis"
+eBookTwo.fileFomat = "DOC"
 
 eBookTwo.printInfo();
 
