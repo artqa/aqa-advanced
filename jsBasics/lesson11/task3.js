@@ -1,16 +1,15 @@
-async function getTodos() {
-    const res = await fetch('https://jsonplaceholder.typicode.com/todos/1')
-    const data = await res.json()
-    return data;
+async function getTodos(id) {
+    const res = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`)
+    return res.json();
  }
 
-async function getUsers() {
-    const res = await fetch('https://jsonplaceholder.typicode.com/users/1')
-    const data = await res.json()
-    return data;
+async function getUsers(id) {
+    const res = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
+    return res.json()
  }
-const todos = getTodos();
-const users = getUsers();
+
+const todos = getTodos(1);
+const users = getUsers(3);
 
 const promisesAll = Promise.all([todos, users]).then(res => {return res}).catch(err => err);
 const promiseRace = Promise.race([todos, users]).then(res => {return res}).catch(err => err);
