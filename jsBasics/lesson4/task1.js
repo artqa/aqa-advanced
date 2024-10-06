@@ -18,5 +18,3 @@ console.log(num);
 console.log(pass);
 console.log(empty);
 console.log(test);
-
-
