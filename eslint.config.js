@@ -2,6 +2,8 @@ import globals from 'globals';
 import pluginJs from '@eslint/js';
 import stylisticJs from '@stylistic/eslint-plugin-js';
 import jest from 'eslint-plugin-jest';
+import cypressEslint from 'eslint-plugin-cypress/flat'
+
 
 export default [
   {
@@ -15,6 +17,7 @@ export default [
     },
   },
   pluginJs.configs.recommended,
+  cypressEslint.configs.recommended,
   jest.configs['flat/recommended'],
   {
     plugins: {
