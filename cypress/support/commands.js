@@ -23,3 +23,28 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.overwrite('type', (originalFn, element, text, options) => {
+  if (options && options.sensitive) {
+    // turn off original log
+    options.log = false
+    // create our own log with masked message
+    Cypress.log({
+      $el: element,
+      name: 'type',
+      message: '*'.repeat(text.length),
+    })
+  }
+
+  return originalFn(element, text, options)
+})
+
+Cypress.Commands.add('login', (email, password) => {
+  cy.get('.btn').contains('Sign In').click();
+  cy.get('h4[class=modal-title]').should('be.visible').and('contain', 'Log in');
+  cy.get('[id=signinEmail]').type(email);
+  cy.get('[id=signinPassword]').type(password, { sensitive: true });
+  cy.get('.modal-footer > .btn-primary').should('be.enabled').click();
+  cy.url().should('contain', '/panel/garage');
+  cy.get('.alert-success').should('contain', 'You have been successfully logged in');
+});
