@@ -48,3 +48,12 @@ Cypress.Commands.add('login', (email, password) => {
   cy.url().should('contain', '/panel/garage');
   cy.get('.alert-success').should('contain', 'You have been successfully logged in');
 });
+
+Cypress.Commands.add('loginAlt', (email1, password1, email2, password2) => {
+  cy.url().then(($url) => {
+    if($url.includes('qauto2')) {
+      cy.login(email1, password1);
+    } else
+      cy.login(email2, password2);
+  })
+});
