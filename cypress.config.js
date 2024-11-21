@@ -20,6 +20,9 @@ export default defineConfig({
       config.baseUrl = config.env.BASE_URL || 'https://qauto.forstudy.space'
       
       return config
-    },
+    },env: {
+      email: "octopus@sea.com",
+      password: "Crusader1!"
+  }
   },
 });

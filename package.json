@@ -13,7 +13,9 @@
     "cy:run": "cypress run --browser electron --reporter mochawesome",
     "cy:open": "cypress open",
     "cy:qa": "cypress run --browser chrome -s ./cypress/e2e/car.spec.js --env BASE_URL=https://qauto.forstudy.space/",
-    "cy:qa2": "cypress run --browser chrome -s ./cypress/e2e/car.spec.js --env BASE_URL=https://qauto2.forstudy.space/"
+    "cy:qa2": "cypress run --browser chrome -s ./cypress/e2e/car.spec.js --env BASE_URL=https://qauto2.forstudy.space/",
+    "cy-qa": "cypress run -s ./cypress/e2e/car.spec.js --config-file qa.config.js",
+    "cy-qa2": "cypress run --spec cypress/e2e/car.spec.js --config-file qa2.config.js"
   },
   "author": "artem",
   "license": "ISC",

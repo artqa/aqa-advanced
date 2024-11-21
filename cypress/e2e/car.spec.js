@@ -25,12 +25,11 @@ describe('Add car and expenses', () => {
   };
 
   beforeEach(() => {
-    cy.visit('/', { auth: {
+    cy.visit('', { auth: {
       username: 'guest',
       password: 'welcome2qauto'
     }});
-    //cy.login(userInfo.emailA, userInfo.passwordA);
-    cy.loginAlt(userInfo.emailA, userInfo.passwordA, userInfo.emailB, userInfo.passwordB);
+    cy.login(Cypress.env('email'), Cypress.env('password'));
   })
 
   it('add car and expenses', () => {
