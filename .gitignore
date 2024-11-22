@@ -2,3 +2,10 @@
 cypress/downloads
 cypress/screenshots
 cypress/videos
+cypress/testFolder
+runner-results
+multi-reporter-config.json
+mochawesome-report
+results
+snapshots
+mochawesome-general.json
