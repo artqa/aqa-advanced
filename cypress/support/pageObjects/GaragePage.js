@@ -53,6 +53,7 @@ export default class Garage {
   }
 
   deleteCar(){
+    cy.get('[routerlink=garage]').click()
     cy.get('.car_edit').each(($el) => {
       if(!$el.length) {
         cy.log('nothing to delete')

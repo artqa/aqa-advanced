@@ -48,3 +48,11 @@ Cypress.Commands.add('login', (email, password) => {
   cy.url().should('contain', '/panel/garage');
   cy.get('.alert-success').should('contain', 'You have been successfully logged in');
 });
+
+Cypress.Commands.add('addExpense', (url, body) => {
+  cy.request({
+    method: 'POST',
+    url: url,
+    body: body
+  })
+})
