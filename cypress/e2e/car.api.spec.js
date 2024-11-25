@@ -75,9 +75,7 @@ describe('Add car and expenses', () => {
     //find created car
     expensesPage.fuelExpensesLink.click();
     expensesPage.expensesTitle.should('be.visible');
-    //cy.get('tr > td:nth-child(1)').should('contain', carInfo.date2)
-
-
+    
     cy.get('tr > td').should(($resp) => {
         expect($resp.text()).to.contain(carInfo.date);
         expect($resp.text()).to.contain(carInfo.mileage2);
