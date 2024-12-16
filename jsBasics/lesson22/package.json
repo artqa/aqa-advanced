@@ -4,7 +4,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test:pw": "playwright test",
+    "test:pw": "playwright test --headed",
+    "test:pwLoggedin": "cp './src/environments/.env.qa' '.env' && source .env && playwright test --grep '@thistest' --headed --project='Google Chrome'",
     "test:qa-custom-env:headed": "cp './src/environments/.env.qa' '.env' && source .env && playwright test --headed",
     "test:qa2-custom-env:headed": "cp './src/environments/.env.qa2' '.env' && source .env && playwright test --headed"
   },
