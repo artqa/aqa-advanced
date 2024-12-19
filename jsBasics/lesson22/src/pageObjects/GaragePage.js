@@ -41,7 +41,7 @@ export default class Garage extends BasePage {
         this.locators.loginButton.click();
       }
 
-    async deleteCar() {
+    async deleteAllCars() {
         await this.page.click('[routerlink=garage]');
         const carEditElements = await this.page.locator('.car_edit');
         const carCount = await carEditElements.count();
