@@ -19,5 +19,9 @@ export default class Login extends BasePage {
       await this.loginForm.fillInLoginForm(email, password)
       await this.locators.loginBtn.click();
     }  
+
+    async clearCookies(){
+      await this.context.clearCookies();
+    }
    
 }
