@@ -4,6 +4,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "test1": "playwright test --headed --grep '@profile' --project='Google Chrome'",
+    "test2": "playwright test --headed --grep '@apiContext' --project='Google Chrome'",
     "test:pw": "playwright test --headed",
     "test:pw-logged": "npm run test:qa-custom-env:headed -- --grep '@thistest' --project='Google Chrome'",
     "test:qa-custom-env:headed": "cp './src/environments/.env.qa' '.env' && source .env && playwright test --headed",
