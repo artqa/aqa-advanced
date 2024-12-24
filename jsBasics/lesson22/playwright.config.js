@@ -48,10 +48,10 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
-    {
+/*     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
-    },
+    }, */
 
     { name: 'setup', testMatch: '*.setup.js' },
     {
@@ -63,12 +63,31 @@ export default defineConfig({
       },
       dependencies: ['setup'],
     },
+/*     { name: 'setup-chromium', testMatch: '*.setup.js', use: {
+      ...devices['Desktop Chrome']
+    } },
+    {
+      name: 'chromium',
+      use: { 
+        ...devices['Desktop Chrome'], 
+        storageState: 'session-storage.json'
+      },
+      dependencies: ['setup-chromium'],
+    }, */
 
-/*     {
+    { name: 'setup-firefox', testMatch: '*.setup.js', use: {
+      ...devices['Desktop Firefox']
+    } },
+    {
       name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
+      use: { 
+        ...devices['Desktop Firefox'], 
+        storageState: 'session-storage.json'
+      },
+      dependencies: ['setup-firefox'],
     },
 
+/*    
     {
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
