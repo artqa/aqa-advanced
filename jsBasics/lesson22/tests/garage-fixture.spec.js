@@ -1,4 +1,4 @@
-import { test } from "/Users/artem/Desktop/Automation/project/aqa-advanced/jsBasics/lesson22/src/fixtures/login.fixture.js";
+import { test } from "../src/fixtures/login.fixture.js";
 import { expect } from '@playwright/test';
 
 test.beforeEach(async ({ garagePage, page }) => {
