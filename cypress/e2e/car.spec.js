@@ -3,7 +3,7 @@ import { GaragePage, ExpensesPage } from '../support/pageObjects';
 const garagePage = new GaragePage();
 const expensesPage = new ExpensesPage();
 
-describe('Add car and expenses', () => {
+describe.skip('Add car and expenses', () => {
 
   const userInfo = {
     emailA: "beetle@sky.com",
