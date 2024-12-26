@@ -1,5 +1,5 @@
 
-import '/Users/artem/Desktop/Automation/project/aqa-advanced/cypress/support/commands.js'
+import '../support/commands.js'
 import { faker } from '@faker-js/faker';
 
 describe('Account registration flow', ()=> {
