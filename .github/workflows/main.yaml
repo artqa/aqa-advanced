@@ -1,4 +1,4 @@
-name: CI Testing
+name: HW CI Testing
 on:
   push:
     branches:
@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install dependencies
-       working-directory: ./
+        working-directory: ./
         run: npm ci
       - name: Run Cypress tests
         working-directory: ./
